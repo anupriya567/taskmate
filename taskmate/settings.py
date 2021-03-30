@@ -78,7 +78,7 @@ TEMPLATES = [
 
 
 
-
+ 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -89,6 +89,7 @@ DATABASES = {
     }
 }
 
+WSGI_APPLICATION = 'taskmate.wsgi.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
