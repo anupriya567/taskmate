@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>index- taskmate</title>
+{% endblock title %}
+
+{% block content %}
+
+  <div class="container my-5">
+    <div class="row">
+        <div class ="col-lg-4">
+          <img class="img-thumbnail " src="{% static '/images/david-travis-5bYxXawHOQg-unsplash.jpg' %}" alt="">
+        </div>
+        <div class ="col-lg-4">
+           <img class="img-thumbnail " src="{% static '/images/kelly-sikkema--1_RZL8BGBM-unsplash.jpg' %}" alt="">
+        </div>
+        <div class ="col-lg-4">
+          <img class="img-thumbnail " src="{% static '/images/jan-kahanek-g3O5ZtRk2E4-unsplash.jpg' %}" alt="">
+        </div>
+    </div>
+        <div class="maintext">
+            <h2 >TaskMate : Your online todolist app</h>
+            <h4>Making your life easier enough </h4>
+            
+            {% if user.is_authenticated %}
+                <button type="button" class="btn btn-info"><a class="remove" class="nav-link" href="{% url 'todolist'%}">Let's Get Started</a></button>
+            {% else %}
+                <button type="button" class="remove"class="btn btn-info">Let's Get Started</button>
+            {% endif %}
+      </div>
+  </div>
+{% endblock content %}
+
