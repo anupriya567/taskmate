@@ -9,7 +9,7 @@ Gives a brief understanding about:
    python manage.py makemigrations -> after making model this is the first step we to do. As we are now just having those fields in models.py file. We want these fields in our db.
                                       It convert our file to sql queries and a new file can be seen in migration folder.
    python manage.py migrate -> to make all those migrations. convert sql queries to tables.
-6) How to connect url -> views ---use model(if req.)--> render template
+6) How to connect    url -> views ---use model(if req.)--> render template
 7) Why do we need Jinja 2?
     Sandboxed Execution: It provides a protected framework for automation of testing programs, whose behaviour is unknown and must be investigated.
     HTML Escaping: Jinja 2 has a powerful automatic HTML Escaping, which helps preventing Cross-site Scripting (XSS Attack). There are special characters like >,<,&, etc. which carry special meanings in the templates. So, if you want to use them as regular text in your documents then, replace them with entities. Not doing so might lead to XSS-Attack.
