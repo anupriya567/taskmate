@@ -19,7 +19,8 @@
 <form method='POST'>
      {% csrf_token %}
   <div class="form-group my-4 mb-3">
-    <input type="text" class="form-control" name="task" placeholder="Add a task">
+    <input type="text" class="form-control" name="title" placeholder="Add a title">
+    <input type="text" class="form-control my-4" name="task" placeholder="Add a task">
     </div>
   <button type="submit" class="btn btn-primary">Add</button>
   
@@ -28,6 +29,7 @@
        <table class="table table-bordered my-5">
         <thead class="table-dark" >
             <tr>
+              <th scope="col">Title</th>
                 <th scope="col">Task</th>
                 <th scope="col">Current Status</th>
                 <th scope="col">Edit</th>
@@ -39,6 +41,7 @@
                 {% for obj in all_tasks %}
                 {% if obj.done %}
                         <tr class="table-success"> 
+                            <td scope="row"><del>{{obj.title}}</del></td>
                             <td scope="row"><del>{{obj.task}}</del></td>
                             <td>Completed&emsp; <a href="{% url 'pending_task' obj.id %}">Pending</a></td>
                             <td><a href="{% url 'edit_task' obj.id %}">Edit</a></td>
@@ -47,6 +50,7 @@
                         
                     {% else %}    
                         <tr>
+                            <td scope="row">{{obj.title}}</td>
                             <td scope="row">{{obj.task}}</td>
                             <td><a href="{% url 'complete_task' obj.id %}">Completed</a>&emsp;Pending</td>
                             <td><a href="{% url 'edit_task' obj.id %}">Edit</a></td>

@@ -20,8 +20,11 @@ from todolist_app import views as todolist_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('todolist/',include('todolist_app.urls') ),
-    path('account/',include('users_app.urls') ),
+    path('account/',include('user_app.urls') ),
     path('', todolist_view.index,name='index'),
     path('about', todolist_view.about,name='about'),
     path('contact', todolist_view.contact,name='contact'),
+    # path('accountss/', include('allauth.urls')),
+    
+
 ]

@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 
 class TaskList(models.Model):
     manager = models.ForeignKey(User,on_delete = models.CASCADE,default=None)
-    task = models.CharField(max_length=300)
+    title = models.CharField(max_length=500,default='no title')
+    task = models.CharField(max_length=5000)
     done = models.BooleanField(default=False)
 
     def __str__(self):

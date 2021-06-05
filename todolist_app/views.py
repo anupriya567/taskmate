@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 # .forms k mtlb forms iise same directory m h ya isse same folder m h
 
 @login_required
-def todolist(request):
+def todolist(request):  
     if request.method == "POST":
         form = TaskForm(request.POST or None)
         if form.is_valid():
